@@ -84,8 +84,6 @@ public class TachenrechnerVerbessert extends JFrame {
 		});
 
 		setjButtonPlus(new JButton());
-		// getImagesURLImport();
-		// getImagesURLImport();
 		getjButtonPlus().setIcon(new ImageIcon(new ImageIcon(getFile() + "//" + getArraysuffix()[0].toString())
 				.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
 		getjButtonPlus().setActionCommand("+");
