@@ -214,8 +214,7 @@ public class TachenrechnerVerbessert extends JFrame {
 
 		switch (actionEvent) {
 		case "+":
-			// n1.getClass() == Double.class - ?????????????
-			if (n1 instanceof Integer && n1 instanceof Integer) {
+			if (n1.getClass() == Integer.class && n1.getClass() == Integer.class) {
 				Integer resutHolder = (int) n1 + (int) n2;
 				return resutHolder;
 			} else {
@@ -223,7 +222,7 @@ public class TachenrechnerVerbessert extends JFrame {
 				return resultHolder;
 			}
 		case "-":
-			if (n1 instanceof Integer && n1 instanceof Integer) {
+			if (n1.getClass() == Integer.class && n1.getClass() == Integer.class) {
 				Integer resutHolder = (int) n1 - (int) n2;
 				return resutHolder;
 			} else {
@@ -231,7 +230,7 @@ public class TachenrechnerVerbessert extends JFrame {
 				return resultHolder;
 			}
 		case "*":
-			if (n1 instanceof Integer && n1 instanceof Integer) {
+			if (n1.getClass() == Integer.class && n1.getClass() == Integer.class) {
 				Integer resutHolder = (int) n1 * (int) n2;
 				return resutHolder;
 			} else {
@@ -239,7 +238,7 @@ public class TachenrechnerVerbessert extends JFrame {
 				return resultHolder;
 			}
 		case "/":
-			if (n1 instanceof Integer && n1 instanceof Integer) {
+			if (n1.getClass() == Integer.class && n1.getClass() == Integer.class) {
 				Integer resutHolder = (int) n1 / (int) n2;
 				return resutHolder;
 			} else {
