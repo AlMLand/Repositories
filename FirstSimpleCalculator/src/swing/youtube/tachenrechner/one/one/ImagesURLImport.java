@@ -29,7 +29,11 @@ public class ImagesURLImport {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-
+		
+		if(!file.exists()) {
+			file.mkdir();
+		}
+		
 		for (int i = 0; i < LIST_URL_ADRESSE.size(); i++) {
 			try (BufferedInputStream bis = new BufferedInputStream(LIST_URL_ADRESSE.get(i).openStream());
 					FileOutputStream fos = new FileOutputStream(file + "//" + ARRAY_SUFFIX[i])) {
