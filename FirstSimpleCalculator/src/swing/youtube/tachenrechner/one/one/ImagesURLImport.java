@@ -34,9 +34,7 @@ public class ImagesURLImport {
 				e.printStackTrace();
 			}
 
-			if (!file.exists()) {
-				file.mkdir();
-			}
+			file.mkdir();
 
 			for (int i = 0; i < LIST_URL_ADRESSE.size(); i++) {
 				try (InputStream inputStream = LIST_URL_ADRESSE.get(i).openStream()) {
