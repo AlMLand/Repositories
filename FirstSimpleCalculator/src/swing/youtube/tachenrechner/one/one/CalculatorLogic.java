@@ -40,7 +40,7 @@ public class CalculatorLogic extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		//new icon for calculator(jar file, etc.)
+		//new icon for calculator
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(new File(System.getProperty("java.io.tmpdir") + "//MyDirectoryCalculatorGitHub1985//Logo.png").toString()));
 		this.setVisible(true);
 
