@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import static swing.youtube.tachenrechner.one.one.ImagesURLImport.*;
 
 @SuppressWarnings("serial")
-public class TachenrechnerVerbessert extends JFrame {
+public class CalculatorLogic extends JFrame {
 
 	final private static String FIRST_OPERAND = "First operand";
 	final private static String SECOND_OPERAND = "Second operand";
@@ -30,7 +30,7 @@ public class TachenrechnerVerbessert extends JFrame {
 	private Integer resultInt = Integer.MAX_VALUE;
 	private Double resultDouble = Double.MAX_VALUE;
 
-	public TachenrechnerVerbessert() {
+	public CalculatorLogic() {
 		super("Calculator");
 		setLayout(new FlowLayout());
 		setSize(300, 165);
@@ -142,7 +142,7 @@ public class TachenrechnerVerbessert extends JFrame {
 				getjLabelResult().setText("                       +,-,*,/ are missing                       ");
 				return;
 			} else if (getResultInt() != Integer.MAX_VALUE) {
-				JOptionPane.showConfirmDialog(TachenrechnerVerbessert.this, String.valueOf(resultInt), "Result",
+				JOptionPane.showConfirmDialog(CalculatorLogic.this, String.valueOf(resultInt), "Result",
 						JOptionPane.INFORMATION_MESSAGE);
 				getjTextFieldFirst().setForeground(Color.lightGray);
 				getjTextFieldSecond().setForeground(Color.lightGray);
@@ -151,7 +151,7 @@ public class TachenrechnerVerbessert extends JFrame {
 				resultInt = Integer.MAX_VALUE;
 				getjLabelResult().setText("");
 			} else {
-				JOptionPane.showConfirmDialog(TachenrechnerVerbessert.this, String.valueOf(resultDouble), "Result",
+				JOptionPane.showConfirmDialog(CalculatorLogic.this, String.valueOf(resultDouble), "Result",
 						JOptionPane.INFORMATION_MESSAGE);
 				getjTextFieldFirst().setForeground(Color.lightGray);
 				getjTextFieldSecond().setForeground(Color.lightGray);
