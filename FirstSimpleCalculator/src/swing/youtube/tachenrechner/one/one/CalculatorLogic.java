@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.io.File;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -37,6 +39,10 @@ public class CalculatorLogic extends JFrame {
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		//new icon for calculator(jar file, etc.)
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(new File(System.getProperty("java.io.tmpdir") + "//MyDirectoryCalculatorGitHub1985//Logo.png").toString()));
+		this.setVisible(true);
 
 		setjLabelResult(new JLabel(""));
 
