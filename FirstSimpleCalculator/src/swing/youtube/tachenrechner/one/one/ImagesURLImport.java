@@ -22,6 +22,7 @@ public class ImagesURLImport {
 	private static File file = new File(System.getProperty("java.io.tmpdir") + "//MyDirectoryCalculatorGitHub1985//");
 
 	static {
+		
 		try {
 			LIST_URL_ADRESSE.add(new URL("https://img.icons8.com/material-rounded/50/000000/plus-2-math--v1.png"));
 			LIST_URL_ADRESSE.add(new URL("https://img.icons8.com/material-rounded/24/000000/filled-minus-2-math.png"));
@@ -33,11 +34,31 @@ public class ImagesURLImport {
 			e.printStackTrace();
 		}
 
-		file.mkdir();
-
-		for (int i = 0; i < LIST_URL_ADRESSE.size(); i++) {
-			try (InputStream inputStream = LIST_URL_ADRESSE.get(i).openStream()) {
-				Files.copy(inputStream, Paths.get(file + "//" + ARRAY_SUFFIX[i]), StandardCopyOption.REPLACE_EXISTING);
+		for(int j = 0; j < ARRAY_SUFFIX.length; j++) {
+			if(!file.exists()) {
+				file.mkdir();
+				streamPictures();
+			}
+			else if(!(new File(System.getProperty("java.io.tmpdir") + "//MyDirectoryCalculatorGitHub1985//" + ARRAY_SUFFIX[j]).exists())) {
+				streamPictures(j);
+			}
+		}		
+	}
+	
+	static void streamPictures(int... count) {
+		if (count == null) {
+			for (int i = 0; i < LIST_URL_ADRESSE.size(); i++) {
+				try (InputStream inputStream = LIST_URL_ADRESSE.get(i).openStream()) {
+					Files.copy(inputStream, Paths.get(file + "//" + ARRAY_SUFFIX[i]),
+							StandardCopyOption.REPLACE_EXISTING);
+				} catch (IOException ioe) {
+					ioe.printStackTrace();
+				}
+			}
+		} else {
+			try (InputStream inputStream = LIST_URL_ADRESSE.get(count[0]).openStream()) {
+				Files.copy(inputStream, Paths.get(file + "//" + ARRAY_SUFFIX[count[0]]),
+						StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException ioe) {
 				ioe.printStackTrace();
 			}
